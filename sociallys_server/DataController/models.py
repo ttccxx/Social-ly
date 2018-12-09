@@ -13,6 +13,18 @@ class Calendar(models.Model):
     date = models.DateField(verbose_name='date')
     time = models.TimeField(verbose_name='time', default='')
     info = models.CharField(verbose_name='info', max_length=40, default='')
+    type = models.IntegerField(verbose_name='type', default=1)
 
     class Meta:
         verbose_name = 'Calendar'
+
+class Invitation(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user')
+    date = models.DateField(verbose_name='date')
+    time = models.TimeField(verbose_name='time', default='')
+    info = models.CharField(verbose_name='info', max_length=40, default='')
+    invitee = models.ForeignKey(User, null=True, on_delete=models.SET_NULL, related_name='invitee')
+    type = models.IntegerField(verbose_name='type')
+
+    class Meta:
+        verbose_name = 'Invitation'

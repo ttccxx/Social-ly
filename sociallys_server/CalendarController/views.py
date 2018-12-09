@@ -8,14 +8,17 @@ def createUser(dic):
     DC.createUser(dic['id'])
 
 def create(dic):
-    DC.createCalendar(dic['id'], dic['date'], dic['time'], dic['info'])
+    DC.createCalendar(dic, type = 1)
 
 def edit(dic):
-    DC.editCalendar(dic['id'], dic['date'], dic['time'], dic['info'])
+    original_dic = dic['original']
+    new_dic = dic['new']
+    DC.editCalendar(original_dic, new_dic)
 
 def delete(dic):
-    DC.deleteCalendar(dic['id'], dic['date'], dic['time'])
+    DC.deleteCalendar(dic)
 
+# developing...
 def get(dic):
-    calendar = DC.getCalendar(dic['id'])
+    calendar = DC.getCalendar(dic)
     return calendar
