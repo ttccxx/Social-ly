@@ -25,12 +25,15 @@ SECRET_KEY = '=k)^)2y*or9^wv_4_o1wb*mv$gf&t6gpk7wf3iug%tgzlchj@9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['39.96.33.101', '127.0.0.1', '10.129.174.44', '183.173.40.182']
+ALLOWED_HOSTS = ['39.96.33.101', '127.0.0.1', '183.172.44.193', '183.173.40.182', 'localhost', 'giveteamaname.top']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'werkzeug_debugger_runserver',
+    'django_extensions',
+    'sslserver',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

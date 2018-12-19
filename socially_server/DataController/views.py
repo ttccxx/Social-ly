@@ -69,8 +69,8 @@ def delete_calendar(dic):
 
 
 def get_calendar(dic):
+    user = User.objects.filter(session_key=int(dic['sessionKey']))[0]
     dic = {}
-    user = User.objects.filter(session_key=dic['sessionKey'])[0]
     for calendar in Calendar.objects.filter(user=user):
         date = calendar.get_date_str()
         if date not in dic:
@@ -105,7 +105,7 @@ def edit_invitation(dic):
         invitee = User.objects.filter(session_key=dic['invitee'])[0]
     else:
         invitee = None
-    invitation = Invitation.objects.filter(inviter = inviter, event_key = dic['eventKey'])[0]
+    invitation = Invitation.objects.filter(inviter = inviter, date = dic['date'], time = dic['time'])[0]
     invitation.date = dic['date']
     invitation.time = dic['time']
     invitation.thing = dic['thing']
@@ -116,3 +116,27 @@ def edit_invitation(dic):
 def delete_invitation(dic):
     inviter = User.objects.filter(id = dic['inviter'])[0]
     Invitation.objects.filter(inviter = inviter, event_key = dic['eventKey']).delete()
+
+def get_invitations(dic, type):
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+    dic = {}
+    if type == 'inviter':
+        for invitation in Invitation.objects.filter(inviter=user).order_by('time'):
+          date = invitation.get_date_str()
+          if date not in dic.keys():
+              dic[date] = []
+          dic[date].append(invitation.json_dic())
+    else:
+        for invitation in Invitation.objects.filter(invitee=user).order_by('time'):
+          date = invitation.get_date_str()
+          if date not in dic.keys():
+              dic[date] = []
+          dic[date].append(invitation.json_dic())
+
+    print(dic)
+    return dic
+
+def get_single_invitation(dic):
+    inviter = User.objects.filter(session_key = dic['inviterID'])[0]
+    invitation = Invitation.objects.filter(inviter=inviter, date = dic['date'], time = dic['time'])[0]
+    return invitation.json_dic()

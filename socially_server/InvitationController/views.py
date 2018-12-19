@@ -4,6 +4,7 @@ import DataController.views as DC
 import CalendarController.views as CC
 
 def create(dic):
+    print(dic)
     event_key = DC.get_event_key(dic['inviter'])
     dic['eventKey'] = event_key
     DC.create_invitation(dic)
@@ -42,5 +43,11 @@ def delete(dic):
     DC.delete_calendar(dic)
 
 # developing...
-def get(dic):
-    pass
+def get_inviter(dic):
+    return DC.get_invitations(dic, 'inviter')
+
+def get_invitee(dic):
+    return DC.get_invitations(dic, 'invitee')
+
+def get_single_invitation(dic):
+    return DC.get_single_invitation(dic)

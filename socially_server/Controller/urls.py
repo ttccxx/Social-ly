@@ -13,4 +13,7 @@ urlpatterns = [
     path('invitation/modifyInvitation', views.edit_invitation, name='edit_invitation'),
     path('invitation/deleteInvitation', views.delete_invitation, name='delete_invitation'),
     path('invitation/acceptInvitation', views.accept_invitation, name='accept_invitation'),
+    path('invitation/getInviterInvitations', views.get_inviter_invitations, name='get_inviter_invitations'),
+    path('invitation/getSingleInvitation', views.get_single_invitation, name='get_single_invitation'),
+    path('invitation/getInviteeInvitations', views.get_invitee_invitations, name='get_invitee_invitations')
 ]

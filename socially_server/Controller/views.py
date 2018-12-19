@@ -7,11 +7,12 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 def login(request):
-    # dic = request.GET
-    user_list = User.objects.all()
-    last_user = user_list[user_list.count() - 1]
-    session_key = last_user.get_session_key() + 1
-    DC.create_user(session_key)
+    dic = request.GET
+    # user_list = User.objects.all()
+    # last_user = user_list[user_list.count() - 1]
+    # session_key = last_user.get_session_key() + 1
+    # DC.create_user(session_key)
+    session_key = 123
     return JsonResponse({"sessionKey": session_key})
 
 '''
@@ -51,6 +52,8 @@ def get_calendar(request):
 """
 def create_invitation(request):
     dic = request.GET
+    dic = dic.copy()
+    print(dic)
     # test
     # dic = {'inviter': 123, 'date': '2018-12-12', 'time': '18:31', 'thing': 'study', 'place': 'lib'}
     check = DC.check_conflict(dic['inviter'], dic['date'], dic['time'])
@@ -76,10 +79,19 @@ def delete_invitation(request):
 
 def accept_invitation(request):
     dic = request.GET
-    dic = {'inviter': 123, 'date': '2018-12-12', 'time': '18:31', 'thing': 'study', 'place': 'lib', 'eventKey': 5, 'invitee': 456}
+    dic = dic.copy()
+    # dic = {'inviter': 123, 'date': '2018-12-12', 'time': '18:31', 'thing': 'study', 'place': 'lib', 'eventKey': 5, 'invitee': 456}
     return JsonResponse({"state": "success", "eventKey": IC.accept(dic)})
 
 # developing...
-def get_invitation(request):
+def get_inviter_invitations(request):
     dic = request.GET
-    return JsonResponse(IC.get(dic))
+    return JsonResponse(IC.get_inviter(dic))
+
+def get_single_invitation(request):
+    dic = request.GET
+    return JsonResponse(IC.get_single_invitation(dic))
+
+def get_invitee_invitations(request):
+    dic = request.GET
+    return JsonResponse(IC.get_invitee(dic))

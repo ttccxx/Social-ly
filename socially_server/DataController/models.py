@@ -2,6 +2,7 @@ from django.db import models
 
 
 class User(models.Model):
+    name = models.CharField(default='', max_length=10)
     session_key = models.IntegerField(default=0)
     event_key = models.IntegerField(default=0)
 
@@ -72,8 +73,12 @@ class Invitation(models.Model):
         dic['time'] = self.get_time_str()
         dic['eventKey'] = self.get_key_str()
         dic['place'] = self.place
-        # dic['inviter'] = self.inviter
-        # dic['invitee'] = self.invitee
+        dic['inviter'] = self.inviter.name
+        if self.invitee:
+            dic['invitee'] = self.invitee.name
+        else:
+            dic['invitee'] = ''
+        dic['month'] = self.get_date_str().split('-')[1]
         return dic
 
     def get_key_str(self):
