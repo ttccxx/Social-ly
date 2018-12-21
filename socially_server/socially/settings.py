@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'socially.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'socially_db',
+        'NAME': 'test',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'localhost',
