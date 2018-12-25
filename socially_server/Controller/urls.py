@@ -5,6 +5,7 @@ from . import views
 app_name = 'Controller'
 urlpatterns = [
     path('login/', views.login, name='login'),
+    path('login/checkUser', views.check_user, name='check_user'),
     path('event/addEvent', views.create_calendar, name='create_calendar'),
     path('user/events', views.get_calendar, name='get_calendar'),
     path('event/deleteEvent', views.delete_calendar, name='delete_calendar'),

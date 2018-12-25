@@ -15,12 +15,22 @@ def login(request):
     session_key = 123
     return JsonResponse({"sessionKey": session_key})
 
+def check_user(request):
+    dic = request.GET
+    # get session_key through code
+    session_key=123
+    state = DC.check_user(session_key)
+    DC.create_user(session_key)
+    return JsonResponse({"state": state, "sessionKey": session_key})
+
+
 '''
     calendar part
 '''
 
 def create_calendar(request):
     dic = request.GET
+    dic = dic.copy()
     #  test code
     #  dic = {'sessionKey':123, 'date':'2018-12-12', 'time':'17:52', 'thing':'study', 'place':'lib'}
     check = DC.check_conflict(dic['sessionKey'], dic['date'], dic['time'])
@@ -57,6 +67,7 @@ def create_invitation(request):
     # test
     # dic = {'inviter': 123, 'date': '2018-12-12', 'time': '18:31', 'thing': 'study', 'place': 'lib'}
     check = DC.check_conflict(dic['inviter'], dic['date'], dic['time'])
+    print(check)
     if check == 'ok':
         return JsonResponse({"state": "success", "eventKey": IC.create(dic)})
     return JsonResponse({"state": "fail", "eventKey": check})
@@ -80,8 +91,12 @@ def delete_invitation(request):
 def accept_invitation(request):
     dic = request.GET
     dic = dic.copy()
+    check = DC.check_conflict(dic['invitee'], dic['date'], dic['time'])
     # dic = {'inviter': 123, 'date': '2018-12-12', 'time': '18:31', 'thing': 'study', 'place': 'lib', 'eventKey': 5, 'invitee': 456}
-    return JsonResponse({"state": "success", "eventKey": IC.accept(dic)})
+    if check == 'ok':
+        return JsonResponse({"state": "success", "eventKey": IC.accept(dic)})
+    else:
+        return JsonResponse({"state": "fail", "eventKey": check})
 
 # developing...
 def get_inviter_invitations(request):

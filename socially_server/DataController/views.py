@@ -16,12 +16,11 @@ def check_edit_conflict(session_key, event_key, date, time):
     return calendar[0].get_key_str()
 
 
-# test
 def check_user(session_key):
-    calendar = Calendar.objects.filter(session_key=session_key)
-    if calendar.count() != 0:
-        return False
-    return True
+    user = User.objects.filter(session_key=session_key)
+    if user.count() != 0:
+        return True
+    return False
 
 
 def create_user(session_key):
