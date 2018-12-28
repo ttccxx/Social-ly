@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'CalendarController',
     'Controller',
     'InvitationController',
+    'sslserver',
 ]
 
 MIDDLEWARE = [
