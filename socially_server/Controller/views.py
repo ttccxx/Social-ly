@@ -4,7 +4,7 @@ import InvitationController.views as IC
 from DataController.models import User
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-import requests
+# import requests
 
 
 def login(request):
@@ -17,6 +17,20 @@ def login(request):
     DC.create_user(session_key)
     return JsonResponse({"sessionKey": r.json()['openid']})
 
+def set_name(request):
+    dic = request.GET
+    DC.set_name(dic)
+    return JsonResponse({"state": "ok"})
+
+def check_user(request):
+    dic = request.GET
+    appid = 'appid'
+    secret = 'secret'
+    r = requests.get('https://api.weixin.qq.com/sns/jscode2session?appid='+appid+'&secret='+secret+'&js_code='+dic['code']+'&grant_type=authorization_code')
+
+    session_key = r.json()['openid']
+    return JsonResponse({"state": DC.check_user(session_key), "sessionKey": session_key})
+
 '''
     calendar part
 '''
@@ -28,7 +42,7 @@ def create_calendar(request):
     check = DC.check_conflict(dic['sessionKey'], dic['date'], dic['time'])
     if check == 'ok':
         return JsonResponse({"state": "success", "eventKey": CC.create(dic)})
-    return JsonResponse({"state": "fail", "eventKey": check})
+    return JsonResponse({"state": "fail", "eventKey": check['eventKey']})
 
 
 def edit_calendar(request):
@@ -55,13 +69,12 @@ def get_calendar(request):
 def create_invitation(request):
     dic = request.GET
     dic = dic.copy()
-    print(dic)
     # test
     # dic = {'inviter': 123, 'date': '2018-12-12', 'time': '18:31', 'thing': 'study', 'place': 'lib'}
     check = DC.check_conflict(dic['inviter'], dic['date'], dic['time'])
     if check == 'ok':
         return JsonResponse({"state": "success", "eventKey": IC.create(dic)})
-    return JsonResponse({"state": "fail", "eventKey": check})
+    return JsonResponse({"state": "fail", "eventKey": check['eventKey'], "type": check['type']})
 
 
 def edit_invitation(request):
@@ -85,7 +98,6 @@ def accept_invitation(request):
     # dic = {'inviter': 123, 'date': '2018-12-12', 'time': '18:31', 'thing': 'study', 'place': 'lib', 'eventKey': 5, 'invitee': 456}
     return JsonResponse({"state": "success", "eventKey": IC.accept(dic)})
 
-# developing...
 def get_inviter_invitations(request):
     dic = request.GET
     return JsonResponse(IC.get_inviter(dic))

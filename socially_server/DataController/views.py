@@ -5,7 +5,7 @@ def check_conflict(session_key, date, time):
     user = User.objects.filter(session_key=session_key)[0]
     calendar = Calendar.objects.filter(user=user, date=date, time=time)
     if calendar.count() != 0:
-        return calendar[0].get_key_str()
+        return {'eventKey': calendar[0].get_key_str(), 'type': calendar[0].get_type_str()}
     return "ok"
 
 def check_edit_conflict(session_key, event_key, date, time):
@@ -16,12 +16,11 @@ def check_edit_conflict(session_key, event_key, date, time):
     return calendar[0].get_key_str()
 
 
-# test
 def check_user(session_key):
-    calendar = Calendar.objects.filter(session_key=session_key)
-    if calendar.count() != 0:
-        return False
-    return True
+    user = User.objects.filter(session_key=session_key)
+    if user.count() != 0:
+        return True
+    return False
 
 
 def create_user(session_key):
@@ -37,6 +36,11 @@ def get_event_key(session_key):
     event_key = user.new_event()
     user.save()
     return event_key
+
+def set_name(dic):
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+    user.name = dic['name']
+    user.save()
 
 """
     below is the database interface for Calendar
@@ -117,7 +121,7 @@ def edit_invitation(dic):
     invitation.save()
 
 def delete_invitation(dic):
-    inviter = User.objects.filter(id = dic['inviter'])[0]
+    inviter = User.objects.filter(session_key = dic['sessionKey'])[0]
     Invitation.objects.filter(inviter = inviter, event_key = dic['eventKey']).delete()
 
 def get_invitations(dic, type):

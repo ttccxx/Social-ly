@@ -13,7 +13,7 @@ def create(dic):
     dic['sessionKey'] = dic['inviter']
     dic['type'] = 2
     CC.create(dic, type=2)
-    return event_key
+    return "%03d" % event_key
 
 def accept(dic):
     # modify inviter's invitation
@@ -39,10 +39,9 @@ def delete(dic):
     DC.delete_invitation(dic)
 
     # delete calendar
-    dic['sessionKey'] = dic['inviter']
+    # dic['sessionKey'] = dic['inviter']
     DC.delete_calendar(dic)
 
-# developing...
 def get_inviter(dic):
     return DC.get_invitations(dic, 'inviter')
 

@@ -44,6 +44,9 @@ class Calendar(models.Model):
     def get_time_str(self):
         return self.time.strftime("%H:%M")
 
+    def get_type_str(self):
+        return self.type
+
     # def __str__(self):
     #     return "user_key: %d" % self.user.get_session_key() + ", date:" + self.get_date_str() \
     #            + ", time:" + self.get_time_str() + ", eventKey:" + self.get_key_str() \
