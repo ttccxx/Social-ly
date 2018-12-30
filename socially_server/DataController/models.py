@@ -2,8 +2,8 @@ from django.db import models
 
 
 class User(models.Model):
-    name = models.CharField(default='', max_length=10)
-    session_key = models.IntegerField(default=0)
+    name = models.CharField(default='', max_length=20)
+    session_key = models.CharField(default=0,max_length=40)
     event_key = models.IntegerField(default=0)
 
     def get_session_key(self):

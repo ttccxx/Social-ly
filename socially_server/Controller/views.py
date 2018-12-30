@@ -4,25 +4,18 @@ import InvitationController.views as IC
 from DataController.models import User
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+import requests
 
 
 def login(request):
     dic = request.GET
-    # user_list = User.objects.all()
-    # last_user = user_list[user_list.count() - 1]
-    # session_key = last_user.get_session_key() + 1
-    # DC.create_user(session_key)
-    session_key = 123
-    return JsonResponse({"sessionKey": session_key})
+    appid = 'appid'
+    secret = 'secret'
+    r = requests.get('https://api.weixin.qq.com/sns/jscode2session?appid='+appid+'&secret='+secret+'&js_code='+dic['code']+'&grant_type=authorization_code')
 
-def check_user(request):
-    dic = request.GET
-    # get session_key through code
-    session_key=123
-    state = DC.check_user(session_key)
+    session_key = r.json()['openid']
     DC.create_user(session_key)
-    return JsonResponse({"state": state, "sessionKey": session_key})
-
+    return JsonResponse({"sessionKey": r.json()['openid']})
 
 '''
     calendar part
@@ -30,7 +23,6 @@ def check_user(request):
 
 def create_calendar(request):
     dic = request.GET
-    dic = dic.copy()
     #  test code
     #  dic = {'sessionKey':123, 'date':'2018-12-12', 'time':'17:52', 'thing':'study', 'place':'lib'}
     check = DC.check_conflict(dic['sessionKey'], dic['date'], dic['time'])
@@ -41,9 +33,9 @@ def create_calendar(request):
 
 def edit_calendar(request):
     dic = request.GET
-    check = DC.check_edit_conflict(dic['sessionKey'], dic['date'], dic['time'])
+    check = DC.check_edit_conflict(dic['sessionKey'], dic['eventKey'], dic['date'], dic['time'])
     if check == 'ok':
-        return JsonResponse({"state": "success", "eventKey": CC.edit(dic)})
+        return JsonResponse({"state": "success"})
     return JsonResponse({"state": "fail", "eventKey": check})
 
 
@@ -67,7 +59,6 @@ def create_invitation(request):
     # test
     # dic = {'inviter': 123, 'date': '2018-12-12', 'time': '18:31', 'thing': 'study', 'place': 'lib'}
     check = DC.check_conflict(dic['inviter'], dic['date'], dic['time'])
-    print(check)
     if check == 'ok':
         return JsonResponse({"state": "success", "eventKey": IC.create(dic)})
     return JsonResponse({"state": "fail", "eventKey": check})
@@ -91,12 +82,8 @@ def delete_invitation(request):
 def accept_invitation(request):
     dic = request.GET
     dic = dic.copy()
-    check = DC.check_conflict(dic['invitee'], dic['date'], dic['time'])
     # dic = {'inviter': 123, 'date': '2018-12-12', 'time': '18:31', 'thing': 'study', 'place': 'lib', 'eventKey': 5, 'invitee': 456}
-    if check == 'ok':
-        return JsonResponse({"state": "success", "eventKey": IC.accept(dic)})
-    else:
-        return JsonResponse({"state": "fail", "eventKey": check})
+    return JsonResponse({"state": "success", "eventKey": IC.accept(dic)})
 
 # developing...
 def get_inviter_invitations(request):

@@ -1,8 +1,9 @@
 import DataController.views as DC
 
 
-def create(dic, type = 1):
+def create(dic, type= 1):
     if type == 1:
+        dic = dic.copy()
         event_key = DC.get_event_key(dic['sessionKey'])
         dic['eventKey'] = event_key
         dic['type'] = 1

@@ -16,14 +16,18 @@ def check_edit_conflict(session_key, event_key, date, time):
     return calendar[0].get_key_str()
 
 
+# test
 def check_user(session_key):
-    user = User.objects.filter(session_key=session_key)
-    if user.count() != 0:
-        return True
-    return False
+    calendar = Calendar.objects.filter(session_key=session_key)
+    if calendar.count() != 0:
+        return False
+    return True
 
 
 def create_user(session_key):
+    user = User.objects.filter(session_key=session_key)
+    if user.count() != 0:
+        return;
     user = User()
     user.session_key = session_key
     user.save()
@@ -68,7 +72,7 @@ def delete_calendar(dic):
 
 
 def get_calendar(dic):
-    user = User.objects.filter(session_key=int(dic['sessionKey']))[0]
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
     dic = {}
     for calendar in Calendar.objects.filter(user=user):
         date = calendar.get_date_str()

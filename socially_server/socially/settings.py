@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'CalendarController',
     'Controller',
     'InvitationController',
-    'sslserver',
+    'sslserver'
 ]
 
 MIDDLEWARE = [
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'socially.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
+        'NAME': 'socially_db',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'localhost',
