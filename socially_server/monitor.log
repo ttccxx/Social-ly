@@ -1,0 +1,911 @@
+[2018-12-30 21:17:18,977] [INFO] This is an error msg
+[2018-12-30 21:17:19,141] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\utils\datastructures.py", line 77, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 16, in login
+    r = requests.get('https://api.weixin.qq.com/sns/jscode2session?appid='+appid+'&secret='+secret+'&js_code='+dic['code']+'&grant_type=authorization_code')
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\utils\datastructures.py", line 79, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'code'
+[2018-12-30 21:17:19,365] [ERROR] "GET /login/ HTTP/1.1" 500 79910
+[2018-12-30 21:20:55,260] [INFO] This is an error msg
+[2018-12-30 21:20:55,570] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 18, in login
+    session_key = r.json()['openid']
+KeyError: 'openid'
+[2018-12-30 21:20:55,649] [ERROR] "GET /login/?code=011V1KYQ0D7I0625mNWQ0FPJYQ0V1KYQ HTTP/1.1" 500 72536
+[2018-12-30 21:21:45,764] [INFO] This is an error msg
+[2018-12-30 21:21:46,059] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 19, in login
+    session_key = r.json()['openid']
+KeyError: 'openid'
+[2018-12-30 21:21:46,130] [ERROR] "GET /login/?code=011gRKm62HANkR01Wnm62CcJm62gRKmj HTTP/1.1" 500 72500
+[2018-12-30 21:22:09,784] [INFO] This is an error msg
+[2018-12-30 21:22:10,218] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 19, in login
+    session_key = r.json()['openid']
+KeyError: 'openid'
+[2018-12-30 21:22:10,262] [ERROR] "GET /login/?code=001V7OY81cDP1O1XQUZ812qCY81V7OY7 HTTP/1.1" 500 72507
+[2018-12-30 21:22:51,471] [INFO] This is an error msg
+[2018-12-30 21:22:51,921] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 247, in execute
+    res = self._query(query)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 412, in _query
+    rowcount = self._do_query(q)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 375, in _do_query
+    db.query(q)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\connections.py", line 276, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.OperationalError: (1366, "Incorrect integer value: 'oQypW4w6iXgEdQztnzCizV-nwHpw' for column 'session_key' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 20, in login
+    DC.create_user(session_key)
+  File "E:\codes\github\Social-ly\socially_server\DataController\views.py", line 32, in create_user
+    user.save()
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 247, in execute
+    res = self._query(query)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 412, in _query
+    rowcount = self._do_query(q)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 375, in _do_query
+    db.query(q)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\connections.py", line 276, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1366, "Incorrect integer value: 'oQypW4w6iXgEdQztnzCizV-nwHpw' for column 'session_key' at row 1")
+[2018-12-30 21:22:52,005] [ERROR] "GET /login/?code=081Yi08Q1Cgxl21lYz9Q1O3W7Q1Yi08U HTTP/1.1" 500 205816
+[2018-12-30 21:28:51,741] [INFO] This is an error msg
+[2018-12-30 21:29:09,191] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 247, in execute
+    res = self._query(query)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 412, in _query
+    rowcount = self._do_query(q)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 375, in _do_query
+    db.query(q)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\connections.py", line 276, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.OperationalError: (1366, "Incorrect integer value: 'oQypW4w6iXgEdQztnzCizV-nwHpw' for column 'session_key' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 19, in login
+    DC.create_user(session_key)
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 32, in create_user
+    user.save()
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 247, in execute
+    res = self._query(query)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 412, in _query
+    rowcount = self._do_query(q)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 375, in _do_query
+    db.query(q)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\connections.py", line 276, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1366, "Incorrect integer value: 'oQypW4w6iXgEdQztnzCizV-nwHpw' for column 'session_key' at row 1")
+[2018-12-30 21:29:09,445] [ERROR] "GET /login/?code=061N7esC0uTg1j2MeZrC0lcesC0N7es5 HTTP/1.1" 500 208977
+[2018-12-30 21:29:21,880] [INFO] This is an error msg
+[2018-12-30 21:29:23,170] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 247, in execute
+    res = self._query(query)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 412, in _query
+    rowcount = self._do_query(q)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 375, in _do_query
+    db.query(q)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\connections.py", line 276, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.OperationalError: (1366, "Incorrect integer value: 'oQypW4w6iXgEdQztnzCizV-nwHpw' for column 'session_key' at row 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 19, in login
+    DC.create_user(session_key)
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 32, in create_user
+    user.save()
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\base.py", line 718, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\base.py", line 748, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\base.py", line 831, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\base.py", line 869, in _do_insert
+    using=using, raw=raw)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 1136, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\sql\compiler.py", line 1289, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\backends\mysql\base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 247, in execute
+    res = self._query(query)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 412, in _query
+    rowcount = self._do_query(q)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\cursors.py", line 375, in _do_query
+    db.query(q)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\MySQLdb\connections.py", line 276, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1366, "Incorrect integer value: 'oQypW4w6iXgEdQztnzCizV-nwHpw' for column 'session_key' at row 1")
+[2018-12-30 21:29:23,423] [ERROR] "GET /login/?code=061p8CJ604aMVD1g2YH60hICJ60p8CJH HTTP/1.1" 500 208961
+[2018-12-30 21:30:03,187] [INFO] This is an error msg
+[2018-12-30 21:34:12,257] [INFO] This is an error msg
+[2018-12-30 21:36:29,362] [INFO] This is an error msg
+[2018-12-30 21:43:42,844] [INFO] This is an error msg
+[2018-12-30 21:43:43,192] [INFO] "GET /login/?code=081Qs2c41UVXfS1Yz3b41F7Tb41Qs2cE HTTP/1.1" 200 46
+[2018-12-30 21:48:52,588] [INFO] This is an error msg
+[2018-12-30 21:48:52,805] [INFO] "GET /login/?code=021pN0tT1lP5p51BeSsT1HS8tT1pN0ti HTTP/1.1" 200 46
+[2018-12-30 21:49:01,374] [INFO] "GET /user/events?sessionKey=oQypW4w6iXgEdQztnzCizV-nwHpw HTTP/1.1" 200 2
+[2018-12-30 21:49:01,375] [INFO] "GET /invitation/getInviteeInvitations?sessionKey=oQypW4w6iXgEdQztnzCizV-nwHpw HTTP/1.1" 200 2
+[2018-12-30 21:49:01,400] [INFO] This is an error msg
+[2018-12-30 21:49:01,414] [INFO] "GET /invitation/getInviterInvitations?sessionKey=oQypW4w6iXgEdQztnzCizV-nwHpw HTTP/1.1" 200 2
+[2018-12-30 21:49:01,597] [INFO] "GET /login/?code=011IO2du0MoZgi1zqBbu0bHadu0IO2d- HTTP/1.1" 200 46
+[2018-12-30 21:49:13,960] [INFO] "GET /login/setName?sessionKey=oQypW4w6iXgEdQztnzCizV-nwHpw&name=SC HTTP/1.1" 200 15
+[2018-12-30 21:49:23,499] [INFO] "GET /invitation/getInviterInvitations?sessionKey=oQypW4w6iXgEdQztnzCizV-nwHpw HTTP/1.1" 200 2
+[2018-12-30 21:49:23,827] [INFO] "GET /user/events?sessionKey=oQypW4w6iXgEdQztnzCizV-nwHpw HTTP/1.1" 200 2
+[2018-12-30 21:49:23,829] [INFO] "GET /invitation/getInviteeInvitations?sessionKey=oQypW4w6iXgEdQztnzCizV-nwHpw HTTP/1.1" 200 2
+[2018-12-30 21:49:23,978] [INFO] This is an error msg
+[2018-12-30 21:49:24,220] [INFO] "GET /login/?code=061Aax6O1Xqm391Fyq6O1PeQ6O1Aax65 HTTP/1.1" 200 46
+[2018-12-30 21:52:20,453] [INFO] "GET /user/events?sessionKey=oQypW4w6iXgEdQztnzCizV-nwHpw HTTP/1.1" 200 2
+[2018-12-30 21:52:20,455] [INFO] "GET /invitation/getInviteeInvitations?sessionKey=oQypW4w6iXgEdQztnzCizV-nwHpw HTTP/1.1" 200 2
+[2018-12-30 21:52:20,457] [INFO] "GET /invitation/getInviterInvitations?sessionKey=oQypW4w6iXgEdQztnzCizV-nwHpw HTTP/1.1" 200 2
+[2018-12-30 21:52:20,687] [INFO] This is an error msg
+[2018-12-30 21:52:20,889] [INFO] "GET /login/?code=011zJYLX1H7CU01ddVMX1noeMX1zJYLa HTTP/1.1" 200 46
+[2018-12-30 21:52:32,259] [INFO] "GET /invitation/getInviteeInvitations?sessionKey=oQypW4w6iXgEdQztnzCizV-nwHpw HTTP/1.1" 200 2
+[2018-12-30 21:52:32,259] [INFO] "GET /invitation/getInviterInvitations?sessionKey=oQypW4w6iXgEdQztnzCizV-nwHpw HTTP/1.1" 200 2
+[2018-12-30 21:52:32,259] [INFO] "GET /user/events?sessionKey=oQypW4w6iXgEdQztnzCizV-nwHpw HTTP/1.1" 200 2
+[2018-12-30 22:00:59,830] [INFO] "GET /login HTTP/1.1" 301 0
+[2018-12-30 22:00:59,868] [INFO] "GET /login/ HTTP/1.1" 200 21
+[2018-12-30 22:12:13,353] [INFO] This is an error msg
+[2018-12-30 22:12:13,475] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\utils\datastructures.py", line 77, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'code'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 16, in login
+    r = requests.get('https://api.weixin.qq.com/sns/jscode2session?appid='+appid+'&secret='+secret+'&js_code='+dic['code']+'&grant_type=authorization_code')
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\utils\datastructures.py", line 79, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'code'
+[2018-12-30 22:12:13,552] [ERROR] "GET /login/ HTTP/1.1" 500 79988
+[2018-12-30 22:12:43,291] [ERROR] Internal Server Error: /invitation/getInviterInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 105, in get_inviter_invitations
+    return JsonResponse(IC.get_inviter(dic))
+  File "E:\codes\github\Social-ly\socially_server\InvitationController\views.py", line 46, in get_inviter
+    return DC.get_invitations(dic, 'inviter')
+  File "E:\codes\github\Social-ly\socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-30 22:12:43,327] [ERROR] Internal Server Error: /invitation/getInviteeInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 113, in get_invitee_invitations
+    return JsonResponse(IC.get_invitee(dic))
+  File "E:\codes\github\Social-ly\socially_server\InvitationController\views.py", line 49, in get_invitee
+    return DC.get_invitations(dic, 'invitee')
+  File "E:\codes\github\Social-ly\socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-30 22:12:43,332] [ERROR] Internal Server Error: /user/events
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 66, in get_calendar
+    return JsonResponse(CC.get(dic))
+  File "E:\codes\github\Social-ly\socially_server\CalendarController\views.py", line 24, in get
+    return DC.get_calendar(dic)
+  File "E:\codes\github\Social-ly\socially_server\DataController\views.py", line 79, in get_calendar
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-30 22:12:43,387] [ERROR] "GET /invitation/getInviterInvitations?sessionKey= HTTP/1.1" 500 83476
+[2018-12-30 22:12:43,431] [ERROR] "GET /invitation/getInviteeInvitations?sessionKey= HTTP/1.1" 500 81852
+[2018-12-30 22:12:43,477] [ERROR] "GET /user/events?sessionKey= HTTP/1.1" 500 81367
+[2018-12-30 22:14:04,855] [ERROR] Internal Server Error: /invitation/getInviteeInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 113, in get_invitee_invitations
+    return JsonResponse(IC.get_invitee(dic))
+  File "E:\codes\github\Social-ly\socially_server\InvitationController\views.py", line 49, in get_invitee
+    return DC.get_invitations(dic, 'invitee')
+  File "E:\codes\github\Social-ly\socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-30 22:14:04,914] [ERROR] "GET /invitation/getInviteeInvitations?sessionKey= HTTP/1.1" 500 81851
+[2018-12-30 22:14:04,955] [ERROR] Internal Server Error: /invitation/getInviterInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 105, in get_inviter_invitations
+    return JsonResponse(IC.get_inviter(dic))
+  File "E:\codes\github\Social-ly\socially_server\InvitationController\views.py", line 46, in get_inviter
+    return DC.get_invitations(dic, 'inviter')
+  File "E:\codes\github\Social-ly\socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-30 22:14:04,967] [ERROR] Internal Server Error: /user/events
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 66, in get_calendar
+    return JsonResponse(CC.get(dic))
+  File "E:\codes\github\Social-ly\socially_server\CalendarController\views.py", line 24, in get
+    return DC.get_calendar(dic)
+  File "E:\codes\github\Social-ly\socially_server\DataController\views.py", line 79, in get_calendar
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-30 22:14:05,059] [ERROR] "GET /invitation/getInviterInvitations?sessionKey= HTTP/1.1" 500 83476
+[2018-12-30 22:14:05,104] [ERROR] "GET /user/events?sessionKey= HTTP/1.1" 500 81367
+[2018-12-31 23:16:54,572] [INFO] This is an error msg
+[2018-12-31 23:16:55,040] [ERROR] Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 18, in login
+    session_key = r.json()['openid']
+KeyError: 'openid'
+[2018-12-31 23:16:55,211] [ERROR] "GET /login/?code=0716xM6N0sbnAb2jji7N0zE77N06xM6S HTTP/1.1" 500 72614
+[2018-12-31 23:16:55,444] [ERROR] Internal Server Error: /user/events
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 66, in get_calendar
+    return JsonResponse(CC.get(dic))
+  File "E:\codes\github\Social-ly\socially_server\CalendarController\views.py", line 24, in get
+    return DC.get_calendar(dic)
+  File "E:\codes\github\Social-ly\socially_server\DataController\views.py", line 79, in get_calendar
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:16:55,491] [ERROR] "GET /user/events?sessionKey= HTTP/1.1" 500 81367
+[2018-12-31 23:18:46,652] [INFO] "GET /login/?code=0011yj690yRTzx1qAo9900tm6901yj6S HTTP/1.1" 200 46
+[2018-12-31 23:18:46,921] [INFO] "GET /user/events?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2018-12-31 23:19:51,365] [INFO] "GET /login/?code=011T6ErK0zXgz82FoMpK00wVrK0T6Ero HTTP/1.1" 200 46
+[2018-12-31 23:19:51,431] [INFO] "GET /user/events?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2018-12-31 23:19:51,667] [ERROR] Internal Server Error: /invitation/getInviterInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 103, in get_inviter_invitations
+    return JsonResponse(IC.get_inviter(dic))
+  File "E:\codes\github\Social-ly\socially_server\InvitationController\views.py", line 45, in get_inviter
+    return DC.get_invitations(dic, 'inviter')
+  File "E:\codes\github\Social-ly\socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:19:51,669] [ERROR] Internal Server Error: /invitation/getInviteeInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 111, in get_invitee_invitations
+    return JsonResponse(IC.get_invitee(dic))
+  File "E:\codes\github\Social-ly\socially_server\InvitationController\views.py", line 48, in get_invitee
+    return DC.get_invitations(dic, 'invitee')
+  File "E:\codes\github\Social-ly\socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:19:51,747] [ERROR] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 83837
+[2018-12-31 23:19:51,784] [ERROR] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 82212
+[2018-12-31 23:19:52,046] [INFO] "GET /login/checkUser?code=061CKsw12LDRvV04fIv12mTew12CKswL HTTP/1.1" 200 61
+[2018-12-31 23:19:52,839] [ERROR] Internal Server Error: /invitation/getSingleInvitation
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 107, in get_single_invitation
+    return JsonResponse(IC.get_single_invitation(dic))
+  File "E:\codes\github\Social-ly\socially_server\InvitationController\views.py", line 51, in get_single_invitation
+    return DC.get_single_invitation(dic)
+  File "E:\codes\github\Social-ly\socially_server\DataController\views.py", line 147, in get_single_invitation
+    invitation = Invitation.objects.filter(inviter=inviter, date = dic['date'], time = dic['time'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:19:52,886] [ERROR] "GET /invitation/getSingleInvitation?inviterID=oaSTc4mmsrY5LFncZexK4Zczzg0I&date=2018-12-31&time=00:00 HTTP/1.1" 500 82239
+[2018-12-31 23:20:58,381] [ERROR] Internal Server Error: /invitation/getInviterInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 103, in get_inviter_invitations
+    return JsonResponse(IC.get_inviter(dic))
+  File "E:\codes\github\Social-ly\socially_server\InvitationController\views.py", line 45, in get_inviter
+    return DC.get_invitations(dic, 'inviter')
+  File "E:\codes\github\Social-ly\socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:20:58,412] [ERROR] Internal Server Error: /invitation/getInviteeInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 111, in get_invitee_invitations
+    return JsonResponse(IC.get_invitee(dic))
+  File "E:\codes\github\Social-ly\socially_server\InvitationController\views.py", line 48, in get_invitee
+    return DC.get_invitations(dic, 'invitee')
+  File "E:\codes\github\Social-ly\socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:20:58,459] [ERROR] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 83784
+[2018-12-31 23:20:58,504] [ERROR] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 82159
+[2018-12-31 23:20:58,627] [INFO] "GET /login/?code=071jogO102EQnI1oF4N10DNgO10jogON HTTP/1.1" 200 46
+[2018-12-31 23:20:58,735] [INFO] "GET /login/checkUser?code=071P1Mom059Wks1ZxHpm0tF1pm0P1Moq HTTP/1.1" 200 61
+[2018-12-31 23:20:59,011] [INFO] "GET /user/events?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2018-12-31 23:20:59,130] [ERROR] Internal Server Error: /invitation/getSingleInvitation
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\codes\github\Social-ly\socially_server\Controller\views.py", line 107, in get_single_invitation
+    return JsonResponse(IC.get_single_invitation(dic))
+  File "E:\codes\github\Social-ly\socially_server\InvitationController\views.py", line 51, in get_single_invitation
+    return DC.get_single_invitation(dic)
+  File "E:\codes\github\Social-ly\socially_server\DataController\views.py", line 147, in get_single_invitation
+    invitation = Invitation.objects.filter(inviter=inviter, date = dic['date'], time = dic['time'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:20:59,176] [ERROR] "GET /invitation/getSingleInvitation?inviterID=oaSTc4mmsrY5LFncZexK4Zczzg0I&date=2018-12-31&time=00:00 HTTP/1.1" 500 82239
+[2018-12-31 23:21:31,144] [ERROR] Internal Server Error: /invitation/getInviterInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 103, in get_inviter_invitations
+    return JsonResponse(IC.get_inviter(dic))
+  File "E:/codes/github/Social-ly/socially_server\InvitationController\views.py", line 45, in get_inviter
+    return DC.get_invitations(dic, 'inviter')
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:21:31,161] [ERROR] Internal Server Error: /invitation/getInviteeInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 111, in get_invitee_invitations
+    return JsonResponse(IC.get_invitee(dic))
+  File "E:/codes/github/Social-ly/socially_server\InvitationController\views.py", line 48, in get_invitee
+    return DC.get_invitations(dic, 'invitee')
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:21:31,435] [ERROR] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 86899
+[2018-12-31 23:21:31,476] [INFO] "GET /login/?code=0818xsDa2EiYwM0ek4Da2umBDa28xsDQ HTTP/1.1" 200 46
+[2018-12-31 23:21:31,621] [ERROR] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 85274
+[2018-12-31 23:21:31,805] [INFO] "GET /user/events?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2018-12-31 23:24:17,032] [ERROR] Internal Server Error: /invitation/getInviteeInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 111, in get_invitee_invitations
+    return JsonResponse(IC.get_invitee(dic))
+  File "E:/codes/github/Social-ly/socially_server\InvitationController\views.py", line 48, in get_invitee
+    return DC.get_invitations(dic, 'invitee')
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:24:17,036] [ERROR] Internal Server Error: /invitation/getInviterInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 103, in get_inviter_invitations
+    return JsonResponse(IC.get_inviter(dic))
+  File "E:/codes/github/Social-ly/socially_server\InvitationController\views.py", line 45, in get_inviter
+    return DC.get_invitations(dic, 'inviter')
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:24:17,268] [ERROR] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 85274
+[2018-12-31 23:24:17,424] [INFO] "GET /login/?code=001yiDQK10tlu40iiNPK1SrSQK1yiDQi HTTP/1.1" 200 46
+[2018-12-31 23:24:17,430] [ERROR] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 86899
+[2018-12-31 23:24:17,943] [INFO] "GET /user/events?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2018-12-31 23:28:44,988] [INFO] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2018-12-31 23:28:44,990] [INFO] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2018-12-31 23:28:45,260] [INFO] "GET /login/?code=071u7BuD1MQc060s6cwD1lQquD1u7Bul HTTP/1.1" 200 46
+[2018-12-31 23:28:45,399] [INFO] "GET /user/events?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2018-12-31 23:33:27,890] [ERROR] Internal Server Error: /invitation/getInviterInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 103, in get_inviter_invitations
+    return JsonResponse(IC.get_inviter(dic))
+  File "E:/codes/github/Social-ly/socially_server\InvitationController\views.py", line 45, in get_inviter
+    return DC.get_invitations(dic, 'inviter')
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:33:27,908] [ERROR] Internal Server Error: /invitation/getInviteeInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 111, in get_invitee_invitations
+    return JsonResponse(IC.get_invitee(dic))
+  File "E:/codes/github/Social-ly/socially_server\InvitationController\views.py", line 48, in get_invitee
+    return DC.get_invitations(dic, 'invitee')
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:33:28,170] [ERROR] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 86899
+[2018-12-31 23:33:28,325] [ERROR] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 85274
+[2018-12-31 23:33:48,272] [ERROR] Internal Server Error: /invitation/getInviterInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 103, in get_inviter_invitations
+    return JsonResponse(IC.get_inviter(dic))
+  File "E:/codes/github/Social-ly/socially_server\InvitationController\views.py", line 45, in get_inviter
+    return DC.get_invitations(dic, 'inviter')
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:33:48,277] [ERROR] Internal Server Error: /invitation/getInviteeInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 111, in get_invitee_invitations
+    return JsonResponse(IC.get_invitee(dic))
+  File "E:/codes/github/Social-ly/socially_server\InvitationController\views.py", line 48, in get_invitee
+    return DC.get_invitations(dic, 'invitee')
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:33:48,466] [ERROR] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 86900
+[2018-12-31 23:33:48,634] [ERROR] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 85274
+[2018-12-31 23:33:49,137] [INFO] "GET /login/checkUser?code=06172H3j0n0Bip1Rv24j00Jp3j072H3P HTTP/1.1" 200 62
+[2018-12-31 23:33:49,245] [INFO] "GET /login/?code=021BT7l50anhCC1h7rn50tVll50BT7lH HTTP/1.1" 200 46
+[2018-12-31 23:33:50,015] [ERROR] Internal Server Error: /invitation/getSingleInvitation
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 107, in get_single_invitation
+    return JsonResponse(IC.get_single_invitation(dic))
+  File "E:/codes/github/Social-ly/socially_server\InvitationController\views.py", line 51, in get_single_invitation
+    return DC.get_single_invitation(dic)
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 147, in get_single_invitation
+    invitation = Invitation.objects.filter(inviter=inviter, date = dic['date'], time = dic['time'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:33:50,032] [INFO] "GET /user/events?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2018-12-31 23:33:50,168] [ERROR] "GET /invitation/getSingleInvitation?inviterID=oaSTc4mmsrY5LFncZexK4Zczzg0I&date=2018-12-31&time=00:00 HTTP/1.1" 500 85354
+[2018-12-31 23:48:53,749] [ERROR] Internal Server Error: /invitation/getInviteeInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 111, in get_invitee_invitations
+    return JsonResponse(IC.get_invitee(dic))
+  File "E:/codes/github/Social-ly/socially_server\InvitationController\views.py", line 48, in get_invitee
+    return DC.get_invitations(dic, 'invitee')
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:48:53,749] [ERROR] Internal Server Error: /invitation/getInviterInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 103, in get_inviter_invitations
+    return JsonResponse(IC.get_inviter(dic))
+  File "E:/codes/github/Social-ly/socially_server\InvitationController\views.py", line 45, in get_inviter
+    return DC.get_invitations(dic, 'inviter')
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:48:54,007] [ERROR] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 85274
+[2018-12-31 23:48:54,035] [INFO] "GET /login/?code=021nRV7N1iLIl81lys7N1s2M7N1nRV7R HTTP/1.1" 200 46
+[2018-12-31 23:48:54,232] [ERROR] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 86899
+[2018-12-31 23:48:54,417] [INFO] "GET /user/events?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2018-12-31 23:54:12,673] [INFO] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2018-12-31 23:54:12,683] [INFO] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2018-12-31 23:54:12,947] [INFO] "GET /login/?code=011K4V2H0KCJfe27dA4H0NtP2H0K4V2j HTTP/1.1" 200 46
+[2018-12-31 23:54:13,308] [INFO] "GET /user/events?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2018-12-31 23:57:20,052] [ERROR] Internal Server Error: /invitation/getInviterInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 103, in get_inviter_invitations
+    return JsonResponse(IC.get_inviter(dic))
+  File "E:/codes/github/Social-ly/socially_server\InvitationController\views.py", line 45, in get_inviter
+    return DC.get_invitations(dic, 'inviter')
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:57:20,066] [ERROR] Internal Server Error: /invitation/getInviteeInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 111, in get_invitee_invitations
+    return JsonResponse(IC.get_invitee(dic))
+  File "E:/codes/github/Social-ly/socially_server\InvitationController\views.py", line 48, in get_invitee
+    return DC.get_invitations(dic, 'invitee')
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 128, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\db\models\query.py", line 303, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[2018-12-31 23:57:20,222] [INFO] "GET /login/?code=021uOEDH0rbkPe2R6dDH0CQKDH0uOEDr HTTP/1.1" 200 46
+[2018-12-31 23:57:20,239] [ERROR] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 86899
+[2018-12-31 23:57:20,398] [ERROR] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 500 85274
+[2018-12-31 23:57:20,945] [INFO] "GET /user/events?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2019-01-01 00:28:23,784] [WARNING] Not Found: /login/code=081NEP6q1GHd5k0m5b6q1WK37q1NEP62
+[2019-01-01 00:28:23,785] [WARNING] "GET /login/code=081NEP6q1GHd5k0m5b6q1WK37q1NEP62 HTTP/1.1" 404 4759
+[2019-01-01 00:28:23,894] [WARNING] Not Found: /favicon.ico
+[2019-01-01 00:28:23,895] [WARNING] "GET /favicon.ico HTTP/1.1" 404 4661
+[2019-01-01 00:28:31,261] [INFO] "GET /login/?code=081NEP6q1GHd5k0m5b6q1WK37q1NEP62 HTTP/1.1" 200 46
+[2019-01-01 00:34:16,175] [WARNING] Not Found: /invitation/getInviterInvitations/
+[2019-01-01 00:34:16,176] [WARNING] "GET /invitation/getInviterInvitations/?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 404 4767
+[2019-01-01 00:34:54,736] [ERROR] Internal Server Error: /invitation/getInviterInvitations
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\utils\datastructures.py", line 77, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'sessionKey'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:/codes/github/Social-ly/socially_server\Controller\views.py", line 103, in get_inviter_invitations
+    return JsonResponse(IC.get_inviter(dic))
+  File "E:/codes/github/Social-ly/socially_server\InvitationController\views.py", line 45, in get_inviter
+    return DC.get_invitations(dic, 'inviter')
+  File "E:/codes/github/Social-ly/socially_server\DataController\views.py", line 127, in get_invitations
+    user = User.objects.filter(session_key=dic['sessionKey'])[0]
+  File "C:\Users\DELL\Envs\socially\lib\site-packages\django\utils\datastructures.py", line 79, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'sessionKey'
+[2019-01-01 00:34:54,923] [ERROR] "GET /invitation/getInviterInvitations HTTP/1.1" 500 90058
+[2019-01-01 00:35:42,642] [INFO] "GET /login/?code=001NsQic1lzCkx0MFDic1FvRic1NsQir HTTP/1.1" 200 46
+[2019-01-01 00:35:42,713] [INFO] "GET /user/events?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2019-01-01 00:35:44,853] [INFO] "GET /login/setName?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I&name=SC HTTP/1.1" 200 15
+[2019-01-01 00:35:48,469] [INFO] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2019-01-01 00:35:48,747] [INFO] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2019-01-01 00:36:29,777] [INFO] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2019-01-01 00:36:50,860] [INFO] "GET /invitation/addInvitation?time=00:00&date=2019-01-01&thing=&place=&inviter=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 39
+[2019-01-01 00:37:21,083] [INFO] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2019-01-01 00:38:59,988] [INFO] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2019-01-01 00:39:46,152] [INFO] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 148
+[2019-01-01 00:40:11,161] [INFO] "GET /invitation/addInvitation?time=00:00&date=2019-01-01&thing=&place=&inviter=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 47
+[2019-01-01 00:41:01,759] [INFO] "GET /login/?code=021fCmqe1w3fEz0UtUpe1MT5qe1fCmqt HTTP/1.1" 200 46
+[2019-01-01 00:41:01,853] [INFO] "GET /user/events?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 102
+[2019-01-01 00:41:06,596] [INFO] "GET /login/setName?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I&name=SC HTTP/1.1" 200 15
+[2019-01-01 00:41:13,082] [INFO] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2019-01-01 00:41:13,084] [INFO] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 148
+[2019-01-01 20:31:50,100] [INFO] "GET /login/?code=081ZIwGc1vHmYx0wpxIc1AhrGc1ZIwGf HTTP/1.1" 200 46
+[2019-01-01 20:31:50,329] [INFO] "GET /user/events?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 102
+[2019-01-01 20:31:52,242] [INFO] "GET /login/setName?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I&name=SC HTTP/1.1" 200 15
+[2019-01-01 20:32:07,754] [INFO] "GET /event/addEvent?time=00:00&date=2019-01-01&thing=&place=&sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 36
+[2019-01-01 20:32:11,534] [INFO] "GET /event/deleteEvent?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I&eventKey=001 HTTP/1.1" 200 2
+[2019-01-01 20:32:13,441] [INFO] "GET /event/addEvent?time=00:00&date=2019-01-01&thing=&place=&sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 39
+[2019-01-01 20:32:37,924] [INFO] "GET /invitation/getInviteeInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 2
+[2019-01-01 20:32:37,924] [INFO] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 148
+[2019-01-01 20:32:58,477] [INFO] "GET /invitation/addInvitation?time=00:00&date=2019-01-01&thing=&place=&inviter=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 47
+[2019-01-01 20:33:15,809] [INFO] "GET /invitation/addInvitation?time=00:02&date=2019-01-01&thing=&place=&inviter=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 39
+[2019-01-01 20:33:19,545] [INFO] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 280
+[2019-01-01 20:33:22,123] [INFO] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 280
+[2019-01-01 20:33:31,578] [INFO] "GET /invitation/deleteInvitation?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I&eventKey=003 HTTP/1.1" 200 2
+[2019-01-01 20:33:32,696] [INFO] "GET /invitation/getInviterInvitations?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 200 148
+[2019-01-01 20:33:46,862] [WARNING] Not Found: /statistics/getStatistics
+[2019-01-01 20:33:46,862] [WARNING] "GET /statistics/getStatistics?sessionKey=oaSTc4mmsrY5LFncZexK4Zczzg0I HTTP/1.1" 404 4740

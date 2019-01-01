@@ -4,13 +4,13 @@ import InvitationController.views as IC
 from DataController.models import User
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-# import requests
-
+import requests
+import logging
 
 def login(request):
     dic = request.GET
-    appid = 'appid'
-    secret = 'secret'
+    appid = 'wx11517929be41cb58'
+    secret = '778952612a774bdda3f46e75f37b1012'
     r = requests.get('https://api.weixin.qq.com/sns/jscode2session?appid='+appid+'&secret='+secret+'&js_code='+dic['code']+'&grant_type=authorization_code')
 
     session_key = r.json()['openid']
@@ -24,8 +24,8 @@ def set_name(request):
 
 def check_user(request):
     dic = request.GET
-    appid = 'appid'
-    secret = 'secret'
+    appid = 'wx11517929be41cb58'
+    secret = '778952612a774bdda3f46e75f37b1012'
     r = requests.get('https://api.weixin.qq.com/sns/jscode2session?appid='+appid+'&secret='+secret+'&js_code='+dic['code']+'&grant_type=authorization_code')
 
     session_key = r.json()['openid']

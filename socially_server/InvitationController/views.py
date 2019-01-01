@@ -4,7 +4,6 @@ import DataController.views as DC
 import CalendarController.views as CC
 
 def create(dic):
-    print(dic)
     event_key = DC.get_event_key(dic['inviter'])
     dic['eventKey'] = event_key
     DC.create_invitation(dic)

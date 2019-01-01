@@ -3,7 +3,7 @@ from django.db import models
 
 class User(models.Model):
     name = models.CharField(default='', max_length=20)
-    session_key = models.CharField(default=0,max_length=40)
+    session_key = models.CharField(max_length=40)
     event_key = models.IntegerField(default=0)
 
     def get_session_key(self):
@@ -13,8 +13,8 @@ class User(models.Model):
         self.event_key += 1
         return self.event_key
 
-    def __str__(self):
-        return "sessionKey:%d, eventKey:%d" % (self.session_key, self.event_key)
+    # def __str__(self):
+    #     return "sessionKey:%d, eventKey:%d" % (self.session_key, self.event_key)
 
 
 class Calendar(models.Model):
@@ -69,6 +69,28 @@ class Invitation(models.Model):
     place = models.CharField(default='', max_length=60)
     invitee = models.ForeignKey(User, null=True, on_delete=models.SET_NULL, related_name='invitee')
 
+    def convert(self, date):
+        if date == '01':
+            return '1'
+        elif date == '02':
+            return '2'
+        elif date == '03':
+            return '3'
+        elif date == '04':
+            return '4'
+        elif date == '05':
+            return '5'
+        elif date == '06':
+            return '6'
+        elif date == '07':
+            return '7'
+        elif date == '08':
+            return '8'
+        elif date == '09':
+            return '9'
+        else:
+            return date
+
     def json_dic(self):
         dic = dict()
         dic['thing'] = self.thing
@@ -81,7 +103,7 @@ class Invitation(models.Model):
             dic['invitee'] = self.invitee.name
         else:
             dic['invitee'] = ''
-        dic['month'] = self.get_date_str().split('-')[1]
+        dic['month'] = self.convert(self.get_date_str().split('-')[1])
         return dic
 
     def get_key_str(self):

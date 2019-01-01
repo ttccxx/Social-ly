@@ -22,7 +22,6 @@ def check_user(session_key):
         return True
     return False
 
-
 def create_user(session_key):
     user = User.objects.filter(session_key=session_key)
     if user.count() != 0:
@@ -140,7 +139,6 @@ def get_invitations(dic, type):
               dic[date] = []
           dic[date].append(invitation.json_dic())
 
-    print(dic)
     return dic
 
 def get_single_invitation(dic):
