@@ -17,5 +17,9 @@ urlpatterns = [
     path('invitation/acceptInvitation', views.accept_invitation, name='accept_invitation'),
     path('invitation/getInviterInvitations', views.get_inviter_invitations, name='get_inviter_invitations'),
     path('invitation/getSingleInvitation', views.get_single_invitation, name='get_single_invitation'),
-    path('invitation/getInviteeInvitations', views.get_invitee_invitations, name='get_invitee_invitations')
+    path('invitation/getInviteeInvitations', views.get_invitee_invitations, name='get_invitee_invitations'),
+    path('statistics/getStatistics', views.get_statistics, name='get_statistics'),
+    path('statistics/addStatistic', views.add_statistic, name='add_statistic'),
+    path('statistics/getSingleStatistic', views.get_single_statistic, name='get_single_statistic'),
+    path('statistics/addReply', views.add_reply, name='add_reply')
 ]

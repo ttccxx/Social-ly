@@ -1,6 +1,7 @@
 import DataController.views as DC
 import CalendarController.views as CC
 import InvitationController.views as IC
+import StatController.views as SC
 from DataController.models import User
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -109,3 +110,25 @@ def get_single_invitation(request):
 def get_invitee_invitations(request):
     dic = request.GET
     return JsonResponse(IC.get_invitee(dic))
+
+'''
+    statistic part
+'''
+def get_statistics(request):
+    dic = request.GET
+    statistc = SC.get_statistics(dic)
+    response = dict()
+    response['statistics'] = statistc
+    return JsonResponse(response)
+
+def add_statistic(request):
+    dic = request.GET
+    return JsonResponse({'state': SC.add_statistic(dic)})
+
+def get_single_statistic(request):
+    dic = request.GET
+    return JsonResponse(SC.get_single_statistic(dic))
+
+def add_reply(request):
+    dic = request.GET
+    return JsonResponse({'state': SC.add_reply(dic)})
