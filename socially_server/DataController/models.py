@@ -120,3 +120,25 @@ class Invitation(models.Model):
     #     return "inviter_key: %d" % self.inviter.get_session_key() + ", date:" + self.get_date_str() \
     #            + ", time:" + self.get_time_str() + ", eventKey:" + self.get_key_str() \
     #            + ", place:" + self.place + ", invitee_key: %d" % self.invitee.get_session_key()
+
+class Statistic(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(default='', max_length=20)
+    thing = models.CharField(default='', max_length=20)
+    place = models.CharField(default='', max_length=20)
+    deadDate =  models.DateField()
+    deadTime = models.TimeField()
+    date = models.DateField()
+    time = models.TimeField()
+    number = models.IntegerField()
+    eventKey = models.IntegerField()
+    rank = models.IntegerField(default=0)
+
+    def get_choice(self):
+        choice = dict()
+        choice['date'] = self.date.strftime("%Y-%m-%d")
+        choice['time'] = self.time.strftime("%H:%M")
+        choice['number'] = self.number
+        choice['rank'] = self.rank
+        return choice
+
