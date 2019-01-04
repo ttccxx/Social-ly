@@ -10,8 +10,8 @@ import logging
 
 def login(request):
     dic = request.GET
-    appid = 'wx11517929be41cb58'
-    secret = '778952612a774bdda3f46e75f37b1012'
+    appid = 'appid'
+    secret = 'secret'
     r = requests.get('https://api.weixin.qq.com/sns/jscode2session?appid='+appid+'&secret='+secret+'&js_code='+dic['code']+'&grant_type=authorization_code')
 
     session_key = r.json()['openid']
@@ -25,8 +25,8 @@ def set_name(request):
 
 def check_user(request):
     dic = request.GET
-    appid = 'wx11517929be41cb58'
-    secret = '778952612a774bdda3f46e75f37b1012'
+    appid = 'appid'
+    secret = 'secret'
     r = requests.get('https://api.weixin.qq.com/sns/jscode2session?appid='+appid+'&secret='+secret+'&js_code='+dic['code']+'&grant_type=authorization_code')
 
     session_key = r.json()['openid']
@@ -49,7 +49,9 @@ def create_calendar(request):
 def edit_calendar(request):
     dic = request.GET
     check = DC.check_edit_conflict(dic['sessionKey'], dic['eventKey'], dic['date'], dic['time'])
+    print(check)
     if check == 'ok':
+        DC.edit_calendar(dic)
         return JsonResponse({"state": "success"})
     return JsonResponse({"state": "fail", "eventKey": check})
 
